@@ -67,8 +67,8 @@ job_maven_docker_build:
   before_script:
     - docker info
   script:
-    - docker build -t 192.168.206.27:5000/bakendjava:"$CI_COMMIT_SHORT_SHA" .
-    - docker push 192.168.206.27:5000/bakendjava:"$CI_COMMIT_SHORT_SHA"
+    - docker build -t 192.168.206.27:5000/backendjava:"$CI_COMMIT_SHORT_SHA" .
+    - docker push 192.168.206.27:5000/backendjava:"$CI_COMMIT_SHORT_SHA"
   dependencies:
     - job_maven_install
     

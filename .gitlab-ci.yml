@@ -82,4 +82,4 @@ job_angular_deploy:
     - apt-get install sshpass -y
     - apt-get install openssh-client -y
     - sshpass -p 'user' scp -o StrictHostKeyChecking=no docker-compose.yml user@192.168.206.27:~/docker-compose.yml
-    - sshpass -p 'user' ssh -o StrictHostKeyChecking=no user@192.168.206.27 docker-compose up
+    - sshpass -p 'user' ssh -o StrictHostKeyChecking=no user@192.168.206.27 docker-compose up -d

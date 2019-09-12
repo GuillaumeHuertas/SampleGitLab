@@ -18,9 +18,9 @@ job_angular_docker_build:
     - docker info
   script:
     - cd angularApp
-    - docker build -t 192.168.206.27:5000/angularapp:v1 .
+    - docker build -t 192.168.206.27:5000/angularapp:v2 .
 
-    - docker push 192.168.206.27:5000/angularapp:v1
+    - docker push 192.168.206.27:5000/angularapp:v2
     
 
 ############################MAVEN############################
@@ -68,8 +68,8 @@ job_maven_docker_build:
   before_script:
     - docker info
   script:
-    - docker build -t 192.168.206.27:5000/backendjava:v1 .
-    - docker push 192.168.206.27:5000/backendjava:v1
+    - docker build -t 192.168.206.27:5000/backendjava:v2 .
+    - docker push 192.168.206.27:5000/backendjava:v2
   dependencies:
     - job_maven_install
     

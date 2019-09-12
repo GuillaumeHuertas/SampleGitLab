@@ -1,11 +1,18 @@
 version: '2'
 services:
-  indigo-app:
+  indigo-back-java:
     image: 192.168.206.27:5000/bakendjava
     ports:
-      - 80:8080
+      - 8080:8080
   indigo-postgresql:
-    service: promoapp-postgresql
     image: postgres:11.2
     ports:
       - 5432:5432
+    environment:
+      - POSTGRES_DB=jintm
+      - POSTGRES_USER=jintm
+      - POSTGRES_PASSWORD=jintm
+  indigo-front-angular:
+    image: 192.168.206.27:5000/angularapp
+    ports:
+      - 80:80

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2>Editer un Book</h2>
+    <form [formGroup]="bookEditForm" (ngSubmit)="onSavebook()">
+<div class="form-group">
+
+ <label for="titre">Titre</label>
+<input type="text" id="titre" class="form-control" formControlName="titre">
+</div>
+<div class="form-group">
+
+ <label for="isbn">Isbn</label>
+<input type="text" id="isbn" class="form-control" formControlName="isbn">
+</div>
+<div class="form-group">
+
+ <label for="auteur">Auteur</label>
+<input type="text" id="auteur" class="form-control" formControlName="auteur">
+</div>
+<button class="btn btn-success" [disabled]="bookEditForm.invalid" type="submit">Enregistrer
+      </button>
+    </form>
+    <button class="btn btn-danger" (click)="onAnnuler()">Annuler
+    </button>
+  </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  indigo-app:
+    image: 192.168.206.27:5000/bakendjava
+    ports:
+      - 80:8080
+  indigo-postgresql:
+    service: promoapp-postgresql
+    image: postgres:11.2
+    ports:
+      - 5432:5432

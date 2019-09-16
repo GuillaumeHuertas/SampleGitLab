@@ -1,30 +1,51 @@
-version: '3'
+version: '3.3'
 services:
-  indigo-back-java:
+  backend:
     image: 192.168.206.27:5000/backendjava:14
-    links: 
-      - "indigo-postgresql:database"
-    networks:
-      - backend
-  indigo-postgresql:
+    ports:
+      - 8080:8080
+  database:
     image: postgres:11.2
     environment:
       - POSTGRES_DB=jintm
       - POSTGRES_USER=jintm
       - POSTGRES_PASSWORD=jintm
-    networks:
-      - backend
   indigo-front-angular:
     image: 192.168.206.27:5000/angularapp:14
     ports:
       - 80:80
-    links: 
-      - "indigo-back-java:backend"
-    networks:
-      - backend
-      - frontend
-networks:
-  backend:
-    driver: overlay
-  frontend:
-    driver: bridge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

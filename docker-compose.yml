@@ -4,6 +4,8 @@ services:
     image: 192.168.206.27:5000/backendjava:13
     ports:
       - 8080:8080
+    links: 
+      - "indigo-postgresql:database"
   indigo-postgresql:
     image: postgres:11.2
     ports:
@@ -16,3 +18,6 @@ services:
     image: 192.168.206.27:5000/angularapp:13
     ports:
       - 80:80
+    links: 
+      - "indigo-back-java:backend"
+

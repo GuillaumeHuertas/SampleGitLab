@@ -1,7 +1,7 @@
 version: '2'
 services:
   indigo-back-java:
-    image: 192.168.206.27:5000/backendjava:13
+    image: 192.168.206.27:5000/backendjava:14
     links: 
       - "indigo-postgresql:database"
   indigo-postgresql:
@@ -11,7 +11,7 @@ services:
       - POSTGRES_USER=jintm
       - POSTGRES_PASSWORD=jintm
   indigo-front-angular:
-    image: 192.168.206.27:5000/angularapp:13
+    image: 192.168.206.27:5000/angularapp:14
     ports:
       - 80:80
     links: 

@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BookService implements OnInit {
-  addr = "http://backend:8080/api/v1/book"
+  addr = "backend:8080/api/v1/book"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

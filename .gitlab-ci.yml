@@ -18,9 +18,8 @@ job_angular_docker_build:
     - docker info
   script:
     - cd angularApp
-    - docker build -t 192.168.206.27:5000/angularapp:v2 .
-
-    - docker push 192.168.206.27:5000/angularapp:v2
+    - docker build -t 192.168.206.27:5000/angularapp .
+    - docker push 192.168.206.27:5000/angularapp
     
 
 ############################MAVEN############################
@@ -68,8 +67,8 @@ job_maven_docker_build:
   before_script:
     - docker info
   script:
-    - docker build -t 192.168.206.27:5000/backendjava:v2 .
-    - docker push 192.168.206.27:5000/backendjava:v2
+    - docker build -t 192.168.206.27:5000/backendjava .
+    - docker push 192.168.206.27:5000/backendjava
   dependencies:
     - job_maven_install
     
@@ -83,3 +82,4 @@ job_deploy:
     - apt-get install openssh-client -y
     - sshpass -p 'user' scp -o StrictHostKeyChecking=no docker-compose.yml user@192.168.206.27:~/docker-compose.yml
     - sshpass -p 'user' ssh -o StrictHostKeyChecking=no user@192.168.206.27 docker-compose up -d
+    - sshpass -p 'user' ssh -o StrictHostKeyChecking=no user@192.168.206.27 rm docker-compose.yml

@@ -10,6 +10,8 @@ services:
       - POSTGRES_DB=jintm
       - POSTGRES_USER=jintm
       - POSTGRES_PASSWORD=jintm
+    volumes:
+      - /home/vagrant/data/postgres-data:/var/lib/postgresql/data
   front:
     image: 192.168.206.27:5000/angularapp:latest
     ports:

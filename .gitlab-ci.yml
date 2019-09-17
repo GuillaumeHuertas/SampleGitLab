@@ -78,6 +78,7 @@ job_maven_install:
       - pom.xml
 
 
+
 job_maven_docker_build:
   stage: dockerisation
   image: docker:18.03

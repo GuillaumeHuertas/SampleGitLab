@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   backend:
-    image: 192.168.206.27:5000/backendjava:17
+    image: 192.168.206.27:5000/backendjava:18
     ports:
       - 8080:8080
   database:
@@ -11,7 +11,7 @@ services:
       - POSTGRES_USER=jintm
       - POSTGRES_PASSWORD=jintm
   front:
-    image: 192.168.206.27:5000/angularapp:17
+    image: 192.168.206.27:5000/angularapp:18
     ports:
       - 80:80
 

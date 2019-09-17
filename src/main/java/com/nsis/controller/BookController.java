@@ -23,7 +23,7 @@ import com.nsis.model.Book;
 import com.nsis.repository.BookRepository;
 
 
-
+@CrossOrigin(origins = "http://192.168.206.9")
 @RestController
 @RequestMapping("/api/v1")
 public class BookController {

@@ -20,32 +20,12 @@ export class BookService implements OnInit {
   books: book[] = [];
   bookObservable = new Observable<book[]>();
 
-
   ngOnInit() {
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
     this.getbooks();
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
   }
 
   getbooks() {
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
     this.bookObservable = this.http.get<book[]>(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
-    console.log(this.addr);
   }
 
   getsinglebook(id: number) {

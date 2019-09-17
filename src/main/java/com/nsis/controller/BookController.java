@@ -23,7 +23,7 @@ import com.nsis.model.Book;
 import com.nsis.repository.BookRepository;
 
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "front:80", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class BookController {

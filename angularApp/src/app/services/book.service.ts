@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class BookService implements OnInit {
-  addr = "http://backend:8080/api/v1/book"
+  addr = "backend:8080/api/v1/book"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -22,6 +22,10 @@ export class BookService implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
     this.getbooks();
     console.log(this.addr);
     console.log(this.addr);
@@ -33,7 +37,15 @@ export class BookService implements OnInit {
   }
 
   getbooks() {
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
     this.bookObservable = this.http.get<book[]>(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
+    console.log(this.addr);
   }
 
   getsinglebook(id: number) {

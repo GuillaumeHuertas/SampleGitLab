@@ -8,6 +8,9 @@ variables:
   DOCKER_DRIVER: overlay2
   DOCKER_TLS_CERTDIR: ""
 
+
+####################     ANGULAR     ######################
+
 job_angular_docker_build:
   stage: dockerisation
   image: docker:18.03
@@ -21,9 +24,11 @@ job_angular_docker_build:
     - docker build -t 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" .
     - docker tag 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" 192.168.206.27:5000/angularapp:latest
     - docker push 192.168.206.27:5000/angularapp
-    
+  only:
+    changes:
+      - "./angularApp/*"
 
-############################MAVEN############################
+######################    MAVEN    ########################
 job_maven_test_1:
   stage: test
   image: maven:3-jdk-8
@@ -34,6 +39,10 @@ job_maven_test_1:
     when: on_failure
     paths: 
       - target/
+  only:
+    changes:
+      - "./src/*"
+      - pom.xml
 
 
 job_maven_test_2:
@@ -46,6 +55,11 @@ job_maven_test_2:
     when: on_failure
     paths: 
       - target/
+  only:
+    changes:
+      - "./src/*"
+      - pom.xml
+
    
 
 job_maven_install:
@@ -58,6 +72,11 @@ job_maven_install:
     when: on_success
     paths: 
       - target/
+  only:
+    changes:
+      - "./src/*"
+      - pom.xml
+
 
 job_maven_docker_build:
   stage: dockerisation
@@ -73,6 +92,11 @@ job_maven_docker_build:
     - docker push 192.168.206.27:5000/backendjava
   dependencies:
     - job_maven_install
+  only:
+    changes:
+      - "./src/*"
+      - pom.xml
+
     
   
 #job_deploy:

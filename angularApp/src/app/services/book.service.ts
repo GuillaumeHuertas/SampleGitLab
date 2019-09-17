@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookService implements OnInit {
   addr = "backend:8080/api/v1/book"
   httpOptions = {

@@ -21,7 +21,9 @@ job_angular_docker_build:
     - docker build -t 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" .
     - docker tag 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" 192.168.206.27:5000/angularapp:latest
     - docker push 192.168.206.27:5000/angularapp
-    
+  only:
+    changes:
+      - "./angularApp/*"
 
 ############################MAVEN############################
 job_maven_test_1:
@@ -34,6 +36,10 @@ job_maven_test_1:
     when: on_failure
     paths: 
       - target/
+  only:
+    changes:
+      - "./src/*"
+      - pom.xml
 
 
 job_maven_test_2:

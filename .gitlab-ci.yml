@@ -18,8 +18,9 @@ job_angular_docker_build:
     - docker info
   script:
     - cd angularApp
-    - docker build -t 192.168.206.27:5000/angularapp:18 .
-    - docker push 192.168.206.27:5000/angularapp:18
+    - docker build -t 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" .
+    - docker tag 192.168.206.27:5000/angularapp:"$CI_COMMIT_SHORT_SHA" 192.168.206.27:5000/angularapp:latest
+    - docker push 192.168.206.27:5000/angularapp
     
 
 ############################MAVEN############################
@@ -67,8 +68,9 @@ job_maven_docker_build:
   before_script:
     - docker info
   script:
-    - docker build -t 192.168.206.27:5000/backendjava:18 .
-    - docker push 192.168.206.27:5000/backendjava:18
+    - docker build -t 192.168.206.27:5000/backendjava:"$CI_COMMIT_SHORT_SHA" .
+    - docker tag 192.168.206.27:5000/backendjava:"$CI_COMMIT_SHORT_SHA" 192.168.206.27:5000/backendjava:latest
+    - docker push 192.168.206.27:5000/backendjava
   dependencies:
     - job_maven_install
     

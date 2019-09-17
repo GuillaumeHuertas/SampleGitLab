@@ -22,7 +22,6 @@ import com.nsis.exception.ResourceNotFoundException;
 import com.nsis.model.Book;
 import com.nsis.repository.BookRepository;
 
-@CrossOrigin(origins = "front:80")
 @RestController
 @RequestMapping("/api/v1")
 public class BookController {
